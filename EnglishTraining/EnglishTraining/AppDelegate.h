@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AFNetworking.h>
+@class Session;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) Session *session;
 
 @end
 

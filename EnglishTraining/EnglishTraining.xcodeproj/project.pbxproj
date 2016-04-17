@@ -10,11 +10,19 @@
 		29A1A7CAC82D5B9AADB13878 /* libPods-EnglishTraining.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE219825A5444F957C005F0 /* libPods-EnglishTraining.a */; };
 		336DA74B1CC400D4002ED8AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 336DA74A1CC400D4002ED8AB /* main.m */; };
 		336DA74E1CC400D4002ED8AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 336DA74D1CC400D4002ED8AB /* AppDelegate.m */; };
-		336DA7511CC400D4002ED8AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336DA7501CC400D4002ED8AB /* ViewController.m */; };
+		336DA7511CC400D4002ED8AB /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336DA7501CC400D4002ED8AB /* StartViewController.m */; };
 		336DA7541CC400D4002ED8AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336DA7521CC400D4002ED8AB /* Main.storyboard */; };
 		336DA7561CC400D4002ED8AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336DA7551CC400D4002ED8AB /* Assets.xcassets */; };
 		336DA7591CC400D4002ED8AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336DA7571CC400D4002ED8AB /* LaunchScreen.storyboard */; };
 		336DA7641CC4013F002ED8AB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 336DA7631CC4013F002ED8AB /* Session.m */; };
+		33F0577F1CC415340031AE0B /* TrainingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F0577E1CC415340031AE0B /* TrainingManager.m */; };
+		33F057821CC415830031AE0B /* Training.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F057811CC415830031AE0B /* Training.m */; };
+		33F057851CC415960031AE0B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F057841CC415960031AE0B /* Question.m */; };
+		33F057881CC416B00031AE0B /* TrainingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F057871CC416B00031AE0B /* TrainingController.m */; };
+		33F0578C1CC416E70031AE0B /* QuestionBehaviourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F0578B1CC416E70031AE0B /* QuestionBehaviourViewController.m */; };
+		33F0578F1CC416FD0031AE0B /* AnswerBehaviourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F0578E1CC416FD0031AE0B /* AnswerBehaviourViewController.m */; };
+		33F057921CC41F960031AE0B /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F057911CC41F960031AE0B /* FinishViewController.m */; };
+		33F057951CC41FD20031AE0B /* SceneBehaviourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F057941CC41FD20031AE0B /* SceneBehaviourViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,14 +31,30 @@
 		336DA74A1CC400D4002ED8AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		336DA74C1CC400D4002ED8AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		336DA74D1CC400D4002ED8AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		336DA74F1CC400D4002ED8AB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		336DA7501CC400D4002ED8AB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		336DA74F1CC400D4002ED8AB /* StartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		336DA7501CC400D4002ED8AB /* StartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		336DA7531CC400D4002ED8AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		336DA7551CC400D4002ED8AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		336DA7581CC400D4002ED8AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		336DA75A1CC400D4002ED8AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		336DA7621CC4013F002ED8AB /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		336DA7631CC4013F002ED8AB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		33F0577D1CC415340031AE0B /* TrainingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingManager.h; sourceTree = "<group>"; };
+		33F0577E1CC415340031AE0B /* TrainingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingManager.m; sourceTree = "<group>"; };
+		33F057801CC415830031AE0B /* Training.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Training.h; sourceTree = "<group>"; };
+		33F057811CC415830031AE0B /* Training.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Training.m; sourceTree = "<group>"; };
+		33F057831CC415960031AE0B /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		33F057841CC415960031AE0B /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		33F057861CC416B00031AE0B /* TrainingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingController.h; sourceTree = "<group>"; };
+		33F057871CC416B00031AE0B /* TrainingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingController.m; sourceTree = "<group>"; };
+		33F0578B1CC416E70031AE0B /* QuestionBehaviourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBehaviourViewController.m; sourceTree = "<group>"; };
+		33F0578D1CC416FD0031AE0B /* AnswerBehaviourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerBehaviourViewController.h; sourceTree = "<group>"; };
+		33F0578E1CC416FD0031AE0B /* AnswerBehaviourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerBehaviourViewController.m; sourceTree = "<group>"; };
+		33F057901CC41F960031AE0B /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
+		33F057911CC41F960031AE0B /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
+		33F057931CC41FD20031AE0B /* SceneBehaviourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneBehaviourViewController.h; sourceTree = "<group>"; };
+		33F057941CC41FD20031AE0B /* SceneBehaviourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneBehaviourViewController.m; sourceTree = "<group>"; };
+		33F057961CC423FC0031AE0B /* QuestionBehaviourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionBehaviourViewController.h; sourceTree = "<group>"; };
 		5BE219825A5444F957C005F0 /* libPods-EnglishTraining.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EnglishTraining.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6664BC1000FE341DE0CDFC78 /* Pods-EnglishTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishTraining.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EnglishTraining/Pods-EnglishTraining.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +92,7 @@
 		336DA7481CC400D4002ED8AB /* EnglishTraining */ = {
 			isa = PBXGroup;
 			children = (
+				33F057891CC416C10031AE0B /* Views */,
 				336DA7611CC40107002ED8AB /* Controllers */,
 				336DA7601CC400F9002ED8AB /* Model */,
 				336DA74C1CC400D4002ED8AB /* AppDelegate.h */,
@@ -94,6 +119,12 @@
 			children = (
 				336DA7621CC4013F002ED8AB /* Session.h */,
 				336DA7631CC4013F002ED8AB /* Session.m */,
+				33F0577D1CC415340031AE0B /* TrainingManager.h */,
+				33F0577E1CC415340031AE0B /* TrainingManager.m */,
+				33F057801CC415830031AE0B /* Training.h */,
+				33F057811CC415830031AE0B /* Training.m */,
+				33F057831CC415960031AE0B /* Question.h */,
+				33F057841CC415960031AE0B /* Question.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -101,10 +132,27 @@
 		336DA7611CC40107002ED8AB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				336DA74F1CC400D4002ED8AB /* ViewController.h */,
-				336DA7501CC400D4002ED8AB /* ViewController.m */,
+				33F057931CC41FD20031AE0B /* SceneBehaviourViewController.h */,
+				33F057941CC41FD20031AE0B /* SceneBehaviourViewController.m */,
+				33F0578B1CC416E70031AE0B /* QuestionBehaviourViewController.m */,
+				33F057961CC423FC0031AE0B /* QuestionBehaviourViewController.h */,
+				33F0578D1CC416FD0031AE0B /* AnswerBehaviourViewController.h */,
+				33F0578E1CC416FD0031AE0B /* AnswerBehaviourViewController.m */,
+				336DA74F1CC400D4002ED8AB /* StartViewController.h */,
+				336DA7501CC400D4002ED8AB /* StartViewController.m */,
+				33F057861CC416B00031AE0B /* TrainingController.h */,
+				33F057871CC416B00031AE0B /* TrainingController.m */,
+				33F057901CC41F960031AE0B /* FinishViewController.h */,
+				33F057911CC41F960031AE0B /* FinishViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		33F057891CC416C10031AE0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		3C0CB742D2E2AE5237107EE8 /* Frameworks */ = {
@@ -246,9 +294,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				336DA7641CC4013F002ED8AB /* Session.m in Sources */,
-				336DA7511CC400D4002ED8AB /* ViewController.m in Sources */,
+				336DA7511CC400D4002ED8AB /* StartViewController.m in Sources */,
+				33F0577F1CC415340031AE0B /* TrainingManager.m in Sources */,
+				33F057921CC41F960031AE0B /* FinishViewController.m in Sources */,
+				33F057821CC415830031AE0B /* Training.m in Sources */,
+				33F057851CC415960031AE0B /* Question.m in Sources */,
+				33F0578C1CC416E70031AE0B /* QuestionBehaviourViewController.m in Sources */,
 				336DA74E1CC400D4002ED8AB /* AppDelegate.m in Sources */,
 				336DA74B1CC400D4002ED8AB /* main.m in Sources */,
+				33F0578F1CC416FD0031AE0B /* AnswerBehaviourViewController.m in Sources */,
+				33F057951CC41FD20031AE0B /* SceneBehaviourViewController.m in Sources */,
+				33F057881CC416B00031AE0B /* TrainingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
