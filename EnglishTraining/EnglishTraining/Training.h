@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Training : NSObject
-
+@property(nonatomic, assign) NSUInteger currentQuestionIndex;
+@property(nonatomic, assign) NSUInteger rightAnswersCount;
+@property(nonatomic, readonly) NSArray *questions;
+- (instancetype)initWithQuestions:(NSArray *)questions;
 @end

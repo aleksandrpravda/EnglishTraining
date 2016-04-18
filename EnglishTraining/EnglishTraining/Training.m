@@ -7,7 +7,27 @@
 //
 
 #import "Training.h"
+#import "Question.h"
+#import "Utils.h"
 
-@implementation Training
+@implementation Training {
+    NSMutableArray *_questions;
+}
 
+- (instancetype)initWithQuestions:(NSArray *)questions {
+    self = [super init];
+    if (self) {
+        _questions = [[NSMutableArray alloc] init];
+        for (NSUInteger i = 0; i < questions.count; i++) {
+            NSDictionary *questionDictionary = [Utils safeDictionary:questions[i]];
+            Question *question = [[Question alloc] initWithDictionary:questionDictionary];
+            [_questions addObject:question];
+        }
+    }
+    return self;
+}
+
+- (NSArray *)questions {
+    return _questions;
+}
 @end

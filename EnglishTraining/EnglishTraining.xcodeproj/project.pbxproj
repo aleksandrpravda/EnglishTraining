@@ -15,6 +15,8 @@
 		336DA7561CC400D4002ED8AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336DA7551CC400D4002ED8AB /* Assets.xcassets */; };
 		336DA7591CC400D4002ED8AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336DA7571CC400D4002ED8AB /* LaunchScreen.storyboard */; };
 		336DA7641CC4013F002ED8AB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 336DA7631CC4013F002ED8AB /* Session.m */; };
+		33EE37601CC546A700DAADBC /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EE375F1CC546A700DAADBC /* Utils.m */; };
+		33EE37631CC547E900DAADBC /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EE37621CC547E900DAADBC /* Word.m */; };
 		33F0577F1CC415340031AE0B /* TrainingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F0577E1CC415340031AE0B /* TrainingManager.m */; };
 		33F057821CC415830031AE0B /* Training.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F057811CC415830031AE0B /* Training.m */; };
 		33F057851CC415960031AE0B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F057841CC415960031AE0B /* Question.m */; };
@@ -39,6 +41,10 @@
 		336DA75A1CC400D4002ED8AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		336DA7621CC4013F002ED8AB /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		336DA7631CC4013F002ED8AB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		33EE375E1CC546A700DAADBC /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		33EE375F1CC546A700DAADBC /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		33EE37611CC547E900DAADBC /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		33EE37621CC547E900DAADBC /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		33F0577D1CC415340031AE0B /* TrainingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingManager.h; sourceTree = "<group>"; };
 		33F0577E1CC415340031AE0B /* TrainingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingManager.m; sourceTree = "<group>"; };
 		33F057801CC415830031AE0B /* Training.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Training.h; sourceTree = "<group>"; };
@@ -125,6 +131,10 @@
 				33F057811CC415830031AE0B /* Training.m */,
 				33F057831CC415960031AE0B /* Question.h */,
 				33F057841CC415960031AE0B /* Question.m */,
+				33EE37611CC547E900DAADBC /* Word.h */,
+				33EE37621CC547E900DAADBC /* Word.m */,
+				33EE375E1CC546A700DAADBC /* Utils.h */,
+				33EE375F1CC546A700DAADBC /* Utils.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -134,8 +144,8 @@
 			children = (
 				33F057931CC41FD20031AE0B /* SceneBehaviourViewController.h */,
 				33F057941CC41FD20031AE0B /* SceneBehaviourViewController.m */,
-				33F0578B1CC416E70031AE0B /* QuestionBehaviourViewController.m */,
 				33F057961CC423FC0031AE0B /* QuestionBehaviourViewController.h */,
+				33F0578B1CC416E70031AE0B /* QuestionBehaviourViewController.m */,
 				33F0578D1CC416FD0031AE0B /* AnswerBehaviourViewController.h */,
 				33F0578E1CC416FD0031AE0B /* AnswerBehaviourViewController.m */,
 				336DA74F1CC400D4002ED8AB /* StartViewController.h */,
@@ -296,6 +306,7 @@
 				336DA7641CC4013F002ED8AB /* Session.m in Sources */,
 				336DA7511CC400D4002ED8AB /* StartViewController.m in Sources */,
 				33F0577F1CC415340031AE0B /* TrainingManager.m in Sources */,
+				33EE37601CC546A700DAADBC /* Utils.m in Sources */,
 				33F057921CC41F960031AE0B /* FinishViewController.m in Sources */,
 				33F057821CC415830031AE0B /* Training.m in Sources */,
 				33F057851CC415960031AE0B /* Question.m in Sources */,
@@ -305,6 +316,7 @@
 				33F0578F1CC416FD0031AE0B /* AnswerBehaviourViewController.m in Sources */,
 				33F057951CC41FD20031AE0B /* SceneBehaviourViewController.m in Sources */,
 				33F057881CC416B00031AE0B /* TrainingController.m in Sources */,
+				33EE37631CC547E900DAADBC /* Word.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,15 +16,39 @@
 
 @implementation TrainingController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
 - (void)changeBehaviour {
     switch (_state) {
-        case QuestionState:
+        case QuestionState:{
+            [self exchangeView:@"QuestionBehaviourViewController" animated:YES];
             break;
-        case AnswerState:
+        }
+        case AnswerState: {
+            [self exchangeView:@"AnswerBehaviourViewController" animated:YES];
             break;
+        }
         default:
             break;
     }
+}
+
+- (void)exchangeView:(NSString *)viewName animated:(BOOL)animated {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CGPoint startPosition = CGPointMake(self.view.frame.size.width + 10, 100);
+    CGPoint finishposition = CGPointMake(- (self.view.frame.size.width + 10), 100);
+    SceneBehaviourViewController *newActor = [sb instantiateViewControllerWithIdentifier:viewName];
+    newActor.view.frame = CGRectMake(startPosition.x, startPosition.y, 200, 200);
+    [UIView animateWithDuration:3.0f animations:^{
+        newActor.view.frame = CGRectMake(0, 100, newActor.view.frame.size.width, newActor.view.frame.size.height);
+        self.actor.view.frame = CGRectMake(finishposition.x, finishposition.y, newActor.view.frame.size.width, newActor.view.frame.size.height);
+    } completion:^(BOOL finished) {
+        [self.actor finish];
+        self.actor = newActor;
+        [self.actor start];
+    }];
 }
 
 - (void)behaviourFinished {

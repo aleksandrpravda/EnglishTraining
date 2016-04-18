@@ -14,9 +14,14 @@
 
 @implementation AppDelegate
 
++ (AppDelegate *)instance {
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.session = [[Session alloc] init];
+    self.trainingManager = [[TrainingManager alloc] init];
+    [self.trainingManager loadTrainingData];
     return YES;
 }
 
@@ -40,6 +45,24 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (CGRect)getScreenFrameForCurrentOrientation {
+    return [self getScreenFrameForOrientation:[UIApplication sharedApplication].statusBarOrientation];
+}
+
+- (CGRect)getScreenFrameForOrientation:(UIInterfaceOrientation)orientation {
+    
+    CGRect fullScreenRect = [[UIScreen mainScreen] bounds];
+    
+    // implicitly in Portrait orientation.
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        CGRect temp = CGRectZero;
+        temp.size.width = fullScreenRect.size.height;
+        temp.size.height = fullScreenRect.size.width;
+        fullScreenRect = temp;
+    }
+    return fullScreenRect;
 }
 
 @end

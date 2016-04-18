@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Training;
 
 @interface Session : NSObject
-
+- (void)loadTrainingData:(NSArray *)array completion:(void(^)(Training *training))completion;
 @end

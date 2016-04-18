@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Session;
+#import "Session.h"
+#import "TrainingManager.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) Session *session;
-
+@property (strong, nonatomic, nonnull) UIWindow *window;
+@property (strong, nonatomic, nonnull) Session *session;
+@property (strong, nonatomic, nonnull) TrainingManager *trainingManager;
++ (AppDelegate * _Nonnull)instance;
+- (CGRect)getScreenFrameForCurrentOrientation;
 @end
 

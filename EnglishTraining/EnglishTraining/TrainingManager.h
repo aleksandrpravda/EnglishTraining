@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Training.h"
 
 @interface TrainingManager : NSObject
-
+@property(nonatomic, strong, readonly) Training *currentTraining;
+- (void)loadTrainingData;
 @end

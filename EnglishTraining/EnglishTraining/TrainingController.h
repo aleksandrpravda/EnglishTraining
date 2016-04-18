@@ -12,6 +12,6 @@ typedef NS_ENUM(NSUInteger, SceneState) {
     AnswerState
 };
 #import "SceneBehaviourViewController.h"
-@interface TrainingController : NSObject<ObserverDelegate>
+@interface TrainingController : UIViewController<ObserverDelegate>
 
 @end
