@@ -18,17 +18,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _state = StartState;
+    [self behaviourFinished];
 }
 
 - (void)changeBehaviour {
     switch (_state) {
-        case QuestionState:{
+        case QuestionState: {
             [self exchangeView:@"QuestionBehaviourViewController" animated:YES];
             break;
         }
         case AnswerState: {
             [self exchangeView:@"AnswerBehaviourViewController" animated:YES];
             break;
+        }
+        case FinishState: {
+//            TODO load finish
         }
         default:
             break;
@@ -53,6 +58,8 @@
 
 - (void)behaviourFinished {
     switch (_state) {
+        case StartState:
+            _state = QuestionState;
         case QuestionState:
             _state = AnswerState;
             break;

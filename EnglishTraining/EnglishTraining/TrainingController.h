@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 typedef NS_ENUM(NSUInteger, SceneState) {
+    StartState,
     QuestionState,
-    AnswerState
+    AnswerState,
+    FinishState
 };
 #import "SceneBehaviourViewController.h"
 @interface TrainingController : UIViewController<ObserverDelegate>
