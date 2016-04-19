@@ -15,6 +15,7 @@
 		336DA7561CC400D4002ED8AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336DA7551CC400D4002ED8AB /* Assets.xcassets */; };
 		336DA7591CC400D4002ED8AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336DA7571CC400D4002ED8AB /* LaunchScreen.storyboard */; };
 		336DA7641CC4013F002ED8AB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 336DA7631CC4013F002ED8AB /* Session.m */; };
+		339AAF021CC6963100413755 /* ETAnswerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 339AAF011CC6963100413755 /* ETAnswerButton.m */; };
 		33EE37601CC546A700DAADBC /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EE375F1CC546A700DAADBC /* Utils.m */; };
 		33EE37631CC547E900DAADBC /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 33EE37621CC547E900DAADBC /* Word.m */; };
 		33F0577F1CC415340031AE0B /* TrainingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F0577E1CC415340031AE0B /* TrainingManager.m */; };
@@ -41,6 +42,8 @@
 		336DA75A1CC400D4002ED8AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		336DA7621CC4013F002ED8AB /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		336DA7631CC4013F002ED8AB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		339AAF001CC6963100413755 /* ETAnswerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETAnswerButton.h; sourceTree = "<group>"; };
+		339AAF011CC6963100413755 /* ETAnswerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETAnswerButton.m; sourceTree = "<group>"; };
 		33EE375E1CC546A700DAADBC /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		33EE375F1CC546A700DAADBC /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		33EE37611CC547E900DAADBC /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 		33F057891CC416C10031AE0B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				339AAF001CC6963100413755 /* ETAnswerButton.h */,
+				339AAF011CC6963100413755 /* ETAnswerButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				33F057921CC41F960031AE0B /* FinishViewController.m in Sources */,
 				33F057821CC415830031AE0B /* Training.m in Sources */,
 				33F057851CC415960031AE0B /* Question.m in Sources */,
+				339AAF021CC6963100413755 /* ETAnswerButton.m in Sources */,
 				33F0578C1CC416E70031AE0B /* QuestionBehaviourViewController.m in Sources */,
 				336DA74E1CC400D4002ED8AB /* AppDelegate.m in Sources */,
 				336DA74B1CC400D4002ED8AB /* main.m in Sources */,
