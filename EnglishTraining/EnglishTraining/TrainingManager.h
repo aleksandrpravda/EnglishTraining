@@ -11,5 +11,5 @@
 
 @interface TrainingManager : NSObject
 @property(nonatomic, strong, readonly) Training *currentTraining;
-- (void)loadTrainingData;
+- (void)createTrainingWithCompletion:(void(^)(BOOL finished))completion;
 @end

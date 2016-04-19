@@ -10,5 +10,5 @@
 @class Training;
 
 @interface Session : NSObject
-- (void)loadTrainingData:(NSArray *)array completion:(void(^)(Training *training))completion;
+- (void)loadQuestions:(NSArray *)array completion:(void(^)(NSArray *questions))completion;
 @end

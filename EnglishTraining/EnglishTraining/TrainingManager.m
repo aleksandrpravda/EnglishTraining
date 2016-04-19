@@ -20,9 +20,14 @@ int const COUNT_OF_QUESTIONS_IN_TRAINING = 10;
     return _training;
 }
 
-- (void)loadTrainingData {
-    [[AppDelegate instance].session loadTrainingData:[self getRandomQuestionsID] completion:^(Training *training) {
-        
+- (void)createTrainingWithCompletion:(void(^)(BOOL finished))completion {
+    [[AppDelegate instance].session loadQuestions:[self getRandomQuestionsID] completion:^(NSArray *questions) {
+        if (_training) {
+            [self createTraining:questions];
+            completion(YES);
+        }else {
+            completion(NO);
+        }
     }];
 }
 
@@ -45,6 +50,6 @@ int const COUNT_OF_QUESTIONS_IN_TRAINING = 10;
 - (void)createTraining:(NSArray *)questions {
     _count++;
     _training = [[Training alloc] initWithQuestions:questions];
+    
 }
-
 @end

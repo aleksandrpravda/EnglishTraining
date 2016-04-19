@@ -13,7 +13,7 @@
 #import "Training.h"
 
 @implementation Session
-- (void)loadTrainingData:(NSArray *)array completion:(void(^)(Training *training))completion {
+- (void)loadQuestions:(NSArray *)array completion:(void(^)(NSArray *questions))completion {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
@@ -24,9 +24,8 @@
         if (error) {
             NSLog(@"Error: %@", error);
         } else {
-            NSArray *array = [Utils safeArray:responseObject];
-            Training *training = [[Training alloc] initWithQuestions:array];
-            completion(training);
+            NSArray *questions = [Utils safeArray:responseObject];
+            completion(questions);
         }
     }];
     [dataTask resume];
