@@ -9,7 +9,6 @@
 
 #import "Question.h"
 #import "Utils.h"
-#import "Word.h"
 NSString * const kWord = @"text";
 NSString * const kTranslat = @"translation";
 NSString * const kTranscript = @"transcription";

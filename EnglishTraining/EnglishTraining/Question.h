@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Word;
+#import "Word.h"
 @interface Question : NSObject<NSCoding>
 @property(nonatomic, strong, nonnull) Word * word;
 @property(nonatomic, strong, nonnull) NSString *audioURL;
