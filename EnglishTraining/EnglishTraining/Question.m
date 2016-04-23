@@ -30,7 +30,7 @@ NSString * const kDefinition = @"definition";
         
         self.audioURL = [Utils safeString:dictionary[kAudioUrl]];
         NSArray *images = [Utils safeArray:dictionary[kImage]];
-        self.imageUrl = images.count > 0 ? images[0] : @"";
+        self.imageUrl = [Utils safeString:(images.count > 0 ? images[0] : @"")];
         self.identifire = [Utils safeString:dictionary[kIdentifire]];
         self.definition = [Utils safeString:dictionary[kDefinition]];
         NSArray *alt = [Utils safeArray:dictionary[kAlternatives]];

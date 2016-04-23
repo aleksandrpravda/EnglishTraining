@@ -17,8 +17,8 @@ NSString * const kTranscription = @"transcription";
     self = [super init];
     if (self) {
         self.text = [Utils safeString:dictionary[kText]];
-        self.transcription = [Utils safeString:dictionary[kTranslation]];
-        self.translation = [Utils safeString:dictionary[kTranscription]];
+        self.transcription = [Utils safeString:dictionary[kTranscription]];
+        self.translation = [Utils safeString:dictionary[kTranslation]];
     }
     return self;
 }

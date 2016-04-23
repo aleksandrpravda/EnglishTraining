@@ -21,8 +21,8 @@ int const COUNT_OF_QUESTIONS_IN_TRAINING = 10;
 }
 
 - (void)createTrainingWithCompletion:(void(^)(BOOL finished))completion {
-    [[AppDelegate instance].session loadQuestions:[self getRandomQuestionsID] completion:^(NSArray *questions) {
-        if (_training) {
+    [[AppDelegate instance].session loadQuestions:[self getRandomQuestionsID] completion:^(NSArray *questions, NSError *error) {
+        if (questions) {
             [self createTraining:questions];
             completion(YES);
         }else {

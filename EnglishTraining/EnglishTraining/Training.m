@@ -22,6 +22,7 @@
             NSDictionary *questionDictionary = [Utils safeDictionary:questions[i]];
             Question *question = [[Question alloc] initWithDictionary:questionDictionary];
             [_questions addObject:question];
+            self.state = StartState;
         }
     }
     return self;

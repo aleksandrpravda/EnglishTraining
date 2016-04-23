@@ -21,7 +21,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.session = [[Session alloc] init];
     self.trainingManager = [[TrainingManager alloc] init];
-    [self.trainingManager loadTrainingData];
     return YES;
 }
 

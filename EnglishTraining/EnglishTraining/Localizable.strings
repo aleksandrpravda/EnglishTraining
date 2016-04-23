@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  EnglishTraining
+
+  Created by Alexander Rogachev on 4/24/16.
+  Copyright © 2016 Alexander Rogachev. All rights reserved.
+*/
+"Next_button_text" = "Дальше";
+"Do_Not_Remember" = "Не помню";
+"Play_again" = "Ещё раз";
+"Start_training" = "Начать тренировку";

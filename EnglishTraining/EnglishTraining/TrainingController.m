@@ -7,25 +7,40 @@
 //
 
 #import "TrainingController.h"
+#import "AppDelegate.h"
 #import "SceneBehaviourViewController.h"
+#import "ETProgresImageView.h"
+#import "Question.h"
 
 @interface TrainingController()
-@property (assign) SceneState state;
 @property (strong, nonatomic, nonnull) SceneBehaviourViewController *actor;
 @end
 
-@implementation TrainingController
+@implementation TrainingController {
+    IBOutlet ETProgresImageView *_progress;
+    IBOutlet UIView *_ticketContainer;
+    IBOutlet UILabel *_wordLabel;
+    Training *_training;
+    BOOL _isFirst;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _state = StartState;
+    _isFirst = YES;
+    [_progress setProgressImage:[UIImage imageNamed:@"progress.png"]];
+    _training = [AppDelegate instance].trainingManager.currentTraining;
     [self behaviourFinished];
 }
 
 - (void)changeBehaviour {
-    switch (_state) {
+    switch (_training.state) {
         case QuestionState: {
-            [self exchangeView:@"QuestionBehaviourViewController" animated:YES];
+            if (!_isFirst) {
+                _training.currentQuestionIndex++;
+            }
+            [self updateProgress];
+            [self exchangeView:@"QuestionBehaviourViewController" animated:!_isFirst];
+            _isFirst = NO;
             break;
         }
         case AnswerState: {
@@ -33,38 +48,68 @@
             break;
         }
         case FinishState: {
-//            TODO load finish
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *finishController = [sb instantiateViewControllerWithIdentifier:@"FinishViewController"];
+            [self.navigationController pushViewController:finishController animated:YES];
         }
         default:
             break;
     }
 }
 
+- (void)updateProgress {
+    CGFloat progress = (CGFloat)(_training.currentQuestionIndex + 1)/(CGFloat)_training.questions.count;
+    [_progress setProgress:progress animated:YES];
+}
+
 - (void)exchangeView:(NSString *)viewName animated:(BOOL)animated {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    CGPoint startPosition = CGPointMake(self.view.frame.size.width + 10, 100);
-    CGPoint finishposition = CGPointMake(- (self.view.frame.size.width + 10), 100);
+    CGPoint startPosition = CGPointMake(_ticketContainer.frame.size.width + 10, 0);
+    CGPoint finishposition = CGPointMake(- (_ticketContainer.frame.size.width + 10), 0);
     SceneBehaviourViewController *newActor = [sb instantiateViewControllerWithIdentifier:viewName];
-    newActor.view.frame = CGRectMake(startPosition.x, startPosition.y, 200, 200);
-    [UIView animateWithDuration:3.0f animations:^{
-        newActor.view.frame = CGRectMake(0, 100, newActor.view.frame.size.width, newActor.view.frame.size.height);
+    [newActor setDelegate:self];
+    [_actor setDelegate:nil];
+    newActor.view.frame = CGRectMake(startPosition.x, startPosition.y, _ticketContainer.frame.size.width, _ticketContainer.frame.size.height);
+    [_ticketContainer addSubview:newActor.view];
+    [newActor start];
+    if (animated) {
+        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            newActor.view.frame = CGRectMake(0, 0, newActor.view.frame.size.width, newActor.view.frame.size.height);
+            self.actor.view.frame = CGRectMake(finishposition.x, finishposition.y, newActor.view.frame.size.width, newActor.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            [self.actor finish];
+            self.actor = newActor;
+            [self updateWord];
+        }];
+    }else {
+        newActor.view.frame = CGRectMake(0, 0, newActor.view.frame.size.width, newActor.view.frame.size.height);
         self.actor.view.frame = CGRectMake(finishposition.x, finishposition.y, newActor.view.frame.size.width, newActor.view.frame.size.height);
-    } completion:^(BOOL finished) {
         [self.actor finish];
         self.actor = newActor;
-        [self.actor start];
-    }];
+        [self updateWord];
+    }
+}
+
+- (void)updateWord {
+    NSUInteger index = [AppDelegate instance].trainingManager.currentTraining.currentQuestionIndex;
+    Question *question = [AppDelegate instance].trainingManager.currentTraining.questions[index];
+    [_wordLabel setText:question.word.text];
 }
 
 - (void)behaviourFinished {
-    switch (_state) {
+    switch (_training.state) {
         case StartState:
-            _state = QuestionState;
+            _training.state = QuestionState;
+            break;
         case QuestionState:
-            _state = AnswerState;
+            _training.state = AnswerState;
             break;
         case AnswerState:
-            _state = QuestionState;
+            if (_training.currentQuestionIndex + 1 >= _training.questions.count) {
+                _training.state = FinishState;
+            }else {
+                _training.state = QuestionState;
+            }
             break;
         default:
             break;

@@ -13,19 +13,27 @@
 #import "Training.h"
 
 @implementation Session
-- (void)loadQuestions:(NSArray *)array completion:(void(^)(NSArray *questions))completion {
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
+- (void)loadQuestions:(NSArray *)array completion:(void(^)(NSArray *questions, NSError *error))completion {
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://dictionary.skyeng.ru/api/v1/wordtasks?meaningIds=%@", [self trainingDataParams:array]]];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [self loadDataWIthRequest:request success:^(id response) {
+        NSArray *questions = [Utils safeArray:response];
+        completion(questions, nil);
+    } fail:^(NSError *error) {
+        completion(nil, error);
+    }];
+}
+
+
+- (void)loadDataWIthRequest:(NSURLRequest *)URLRequest success:(void(^)(id response))success fail:(void(^)(NSError *error))fail {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:URLRequest completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
+            fail(error);
         } else {
-            NSArray *questions = [Utils safeArray:responseObject];
-            completion(questions);
+            success(responseObject);
         }
     }];
     [dataTask resume];

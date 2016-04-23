@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+NS_INLINE NSString* loc(NSString* key) {
+    return [[NSBundle mainBundle] localizedStringForKey:key value:key table:nil];
+}
+
 @interface Utils : NSObject
 + (NSString *)safeString:(id)obj;
 + (NSString *)safeString:(id)obj withDefValue:(NSString *)defValue;

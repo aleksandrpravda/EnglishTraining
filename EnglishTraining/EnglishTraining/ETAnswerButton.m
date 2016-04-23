@@ -11,13 +11,13 @@
 @implementation ETAnswerButton
 - (void)updateButton {
     if (_isSelected && _isRight) {
-        
+        [self setBackgroundImage:[UIImage imageNamed:@"answer_btn_right"] forState:UIControlStateNormal];
     }else if (!_isSelected && _isRight) {
-        
+        [self setBackgroundImage:[UIImage imageNamed:@"answer_btn_right"] forState:UIControlStateNormal];
     }else if (_isSelected &&!_isRight) {
-        
+        [self setBackgroundImage:[UIImage imageNamed:@"answer_btn_wrong"] forState:UIControlStateNormal];
     }else if(!_isSelected && !_isRight) {
-        
+        [self setBackgroundImage:[UIImage imageNamed:@"answer_btn"] forState:UIControlStateNormal];
     }
 }
 @end

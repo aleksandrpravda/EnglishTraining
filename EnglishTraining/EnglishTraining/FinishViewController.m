@@ -7,31 +7,41 @@
 //
 
 #import "FinishViewController.h"
-
-@interface FinishViewController ()
-
-@end
-
-@implementation FinishViewController
+#import "AppDelegate.h"
+#import "Utils.h"
+@implementation FinishViewController {
+    IBOutlet UILabel *_resultLabel;
+    IBOutlet UIButton *_nextButton;
+    IBOutlet UIActivityIndicatorView *_indicator;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [_indicator setHidden:YES];
+    [_resultLabel setText:[NSString stringWithFormat:@"%ld/%ld", (unsigned long)[AppDelegate instance].trainingManager.currentTraining.rightAnswersCount, (unsigned long)[AppDelegate instance].trainingManager.currentTraining.questions.count]];
+    [_nextButton setTitle:loc(@"Play_again") forState:UIControlStateNormal];
+    [_nextButton addTarget:self action:@selector(onStart:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)onStart:(id)sender {
+    [_nextButton setHidden:YES];
+    [_indicator setHidden:NO];
+    [_indicator startAnimating];
+    [[AppDelegate instance].trainingManager createTrainingWithCompletion:^(BOOL finished) {
+        [_indicator stopAnimating];
+        [_indicator setHidden:YES];
+        [_nextButton setHidden:NO];
+        if (finished) {
+            [self startTraining];
+        }else {
+            NSLog(@"Can not load data!");
+        }
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)startTraining {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *trainingController = [sb instantiateViewControllerWithIdentifier:@"TrainingController"];
+    [self.navigationController pushViewController:trainingController animated:YES];
 }
-*/
-
 @end

@@ -7,21 +7,42 @@
 //
 
 #import "StartViewController.h"
+#import "AppDelegate.h"
+#import "TrainingManager.h"
+#import "Utils.h"
 
-@interface StartViewController ()
-
-@end
-
-@implementation StartViewController
+@implementation StartViewController {
+    IBOutlet UIButton *_startButton;
+    IBOutlet UIActivityIndicatorView *_indicator;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [_indicator setHidden:YES];
+    [_startButton setTitle:loc(@"Start_training") forState:UIControlStateNormal];
+    [_startButton addTarget:self action:@selector(onStart:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)onStart:(id)sender {
+    [_startButton setHidden:YES];
+    [_indicator setHidden:NO];
+    [_indicator startAnimating];
+    [[AppDelegate instance].trainingManager createTrainingWithCompletion:^(BOOL finished) {
+        [_indicator stopAnimating];
+        [_indicator setHidden:YES];
+        [_startButton setHidden:NO];
+        if (finished) {
+            [self startTraining];
+        }else {
+            NSLog(@"Can not load data!");
+        }
+    }];
+}
+
+- (void)startTraining {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *trainingController = [sb instantiateViewControllerWithIdentifier:@"TrainingController"];
+    [self.navigationController pushViewController:trainingController animated:YES];
 }
 
 @end

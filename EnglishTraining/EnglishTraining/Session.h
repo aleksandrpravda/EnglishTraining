@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Training;
+#import <UIKit/UIKit.h>
 
 @interface Session : NSObject
-- (void)loadQuestions:(NSArray *)array completion:(void(^)(NSArray *questions))completion;
+- (void)loadQuestions:(NSArray *)array completion:(void(^)(NSArray *questions, NSError *error))completion;
 @end
