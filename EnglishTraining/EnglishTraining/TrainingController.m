@@ -24,6 +24,10 @@
     BOOL _isFirst;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _isFirst = YES;

@@ -15,6 +15,10 @@
     IBOutlet UIActivityIndicatorView *_indicator;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_indicator setHidden:YES];

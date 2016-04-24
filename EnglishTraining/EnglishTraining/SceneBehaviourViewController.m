@@ -10,6 +10,10 @@
 
 @implementation SceneBehaviourViewController
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)start {}
 - (void)finish {}
 - (void)pouse {}
