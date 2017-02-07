@@ -96,7 +96,11 @@ limitations under the License.
         console.log(text);
         // document.getElementById("message").innerHTML=text;
         // window.castReceiverManager.setApplicationState(text);
-        window.location.replace('https://google.com');
+        if (text == "g") {
+          window.location.replace('https://google.com');
+        }else {
+          window.location.replace('https://htmlpreview.github.io/?https://github.com/aleksandrpravda/EnglishTraining/blob/master/index.html');
+        }
       };
     </script>
   </body>
