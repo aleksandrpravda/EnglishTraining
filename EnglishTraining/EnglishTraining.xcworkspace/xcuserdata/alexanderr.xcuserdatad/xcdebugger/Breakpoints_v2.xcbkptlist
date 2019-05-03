@@ -528,7 +528,7 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "-loadDataWIthRequest:success:fail:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
